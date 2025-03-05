@@ -1,0 +1,60 @@
+#nav{
+    height: 50vh;
+    width: 75vw;
+    background: hotpink;
+    position: fixed;
+    top: 0;
+    left: -90vw;
+    transition: left 0.3s;
+    box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+    z-index: 10;
+
+}
+
+#wrapper{
+    display: grid;
+    grid-template-rows: 30px 100vw 150px 200px 350px auto 100px;
+    grid-template-areas: 
+    'homeh'
+    'homebi'
+    'homei'
+    'homesp'
+    'homep'
+    'homem'
+    'homef'
+    ;
+}
+
+#homeheader{
+    grid-area: homeh;
+}
+
+#homebigimage{
+    grid-area: homebi;
+}
+
+#homeintro{
+    grid-area: homei;
+}
+
+#homestaffpicks{
+    grid-area: homesp;
+}
+
+#homepopular{
+    grid-area: homep;
+}
+
+#homemain{
+    grid-area: homem;
+}
+
+#homefooter{
+    grid-area: homef;
+}
+
+.songimg{
+    height: 100px;
+    width: 60px;
+
+}
