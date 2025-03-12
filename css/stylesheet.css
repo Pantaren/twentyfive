@@ -17,7 +17,7 @@ body{
 
 #wrapper{
     display: grid;
-    grid-template-rows: 10vh 90vh 150px 200px 350px auto 100px;
+    grid-template-rows: 10vh 90vh 200px 350px 600px auto 100px;
     grid-template-areas: 
     'homeh'
     'homebi'
@@ -46,23 +46,128 @@ body{
 #homestaffpicks{
     grid-area: homesp;
     background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #homepopular{
     grid-area: homep;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    gap: 10px;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.songimg{
+    height: 200px;
+    width: 150px;
+
+}
+
+.sectiontitle{
+    width: 100vw;
+    text-align: center;
+
 }
 
 #homemain{
     grid-area: homem;
     background-color: turquoise;
+    display: grid;
+    grid-template-columns: 65vw 30vw;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+    'poprt poppt'
+    'poprev popprof'
+    ;
+}
+
+#poprevtitle{
+    grid-area: poprt;
+}
+
+#popprotitle{
+    grid-area: poppt;
+}
+
+#homereviewwrapper{
+    display: flex;
+    flex: wrap;
+    flex-direction: column;
+    width: 65vw;
+}
+
+.popularreview{
+    background-color: aliceblue;
+    grid-area: poprev;
+    display: grid;
+    width: 60vw;
+    padding: 20px;
+    grid-template-columns: 40% 30px 60px 60px auto;
+    grid-template-rows: 40px 40px 40px 40px;
+    grid-template-areas: 
+    'primg prt prt prt prt'
+    'primg pri prn prr prr'
+    'primg prtxt prtxt prtxt prtxt'
+    'primg prl prl prl prl'
+    ;
+}
+
+.popularreviewimg{
+    grid-area: primg;
+    background-color: aquamarine;
+}
+
+.popularreviewtitle{
+    grid-area: prt;
+}
+
+.popularreviewname{
+    grid-area: prn;
+}
+
+.popularreviewicon{
+    grid-area: pri;
+}
+
+.popularreviewrating{
+    grid-area: prr;
+}
+
+.popularreviewtext{
+    grid-area: prtxt;
+}
+
+.popularreviewlikes{
+    grid-area: prl;
+}
+
+
+
+.popularprofile{
+    grid: popprof;
 }
 
 #homefooter{
     grid-area: homef;
 }
 
-.songimg{
-    height: 100px;
-    width: 60px;
 
+/*CSS för MOBIL*/
+@media screen and (max-width: 500px) {
+    body{
+        background-color: aqua;
+    }
+}
+
+/*CSS endast för Desktop*/
+
+@media screen and (min-width: 501px) {
+    body{
+        background-color: white;
+    }
 }
