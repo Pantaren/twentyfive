@@ -2,47 +2,62 @@ body{
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 h1, h2, h3, h4{
     color: white;
 }
 
 p{
     color: rgb(127, 130, 146);
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
 }
 
-.menu-button i.material-icons{
-    font-size: 2.5rem;
-}
-
-.menu-button{
-    cursor: pointer;
-    display: inline;
-    color: white;
-    z-index: 20;
-}
-
+.caprasimo-regular {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 /*CSS för MOBIL*/
 @media screen and (max-width: 500px) {
     body{
-        background-color: aqua;
+        background-color: rgb(25, 27, 30);
     }
 
-    #notonphone{
+    .notonphone{
         display: none;
     }
+
+    .sectiontitle{
+        width: 100vw;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .solidlinebig{
+        border-top: 0.5px solid rgb(127, 130, 146);
+        height: 0;
+        width: 80vw;
+    }
     
-}
-
-/*CSS endast för Desktop*/
-
-@media screen and (min-width: 501px) {
-    body{
-        background-color:rgb(25, 27, 30);
+    .menu-button i.material-icons{
+        font-size: 2.5rem;
+    }
+    
+    .menu-button{
+        cursor: pointer;
+        display: inline;
+        color: white;
+        z-index: 20;
     }
 
     .menu{
-        height: 50vh;
+        height: 100vh;
         width: 75vw;
         background: hotpink;
         position: fixed;
@@ -53,14 +68,177 @@ p{
         z-index: 10;
     
     }
-
+    
     .show{
         left: 0;
+    }
+
+    #wrapper{
+        display: grid;
+        grid-template-rows: 15vh 40vh 200px 350px 600px auto 100px;
+        grid-template-areas: 
+        'homeh'
+        'homebi'
+        'homei'
+        'homesp'
+        'homep'
+        'homem'
+        'homef'
+        ;
+        justify-content: center;
+    }
+
+    #homeheader{
+        grid-area: homeh;
+        background-color:rgb(25, 27, 30);
+        display: grid;
+        grid-template-columns: 18vw 50vw;
+        padding: 20px;
+        align-content: center;
+        font-family: "Inter", sans-serif;
+    }
+
+    .homeheadertitle{
+        font-size: 3rem;
+    }
+
+    .menu-button{
+        align-content: center;
+    }
+    
+    #homebigimage{
+        width: 100vw;
+        max-height: 33vh;
+        object-fit: cover;
+    }
+
+    #homeintro{
+        grid-area: homei;
+    }
+
+    #slogan{
+        text-align: center;
+    }
+
+    #homestaffpicks{
+        grid-area: homesp;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .songimgstaff{
+        height: 20vh;
+        width: 20vw;
+    }
+
+    #homepopular{
+        grid-area: homep;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 5px;
+    }
+
+    .songimgpop{
+        height: 20vh;
+        width: 20vw;
+    }
+
+    .popularreview{
+        background-color:rgb(25, 27, 30);
+        grid-area: poprev;
+        display: grid;
+        width: 90vw;
+        padding: 20px;
+        gap: 5px;
+        grid-template-columns: 20% 30px 80px 80px auto;
+        grid-template-rows: 20px 20px 20px 20px;
+        grid-template-areas: 
+        'primg prt prt prt prt'
+        'primg pri prn prr prr'
+        'primg prtxt prtxt prtxt prtxt'
+        'primg prl prl prl prl'
+        ;
+    }
+    
+    .popularreviewimg{
+        grid-area: primg;
+        width: 95%;
+        height: 85%;
+    
+    }
+    
+    .popularreviewtitle{
+        grid-area: prt;
+    }
+    
+    .popularreviewname{
+        grid-area: prn;
+        align-self: center;
+    }
+    
+    .popularreviewicon{
+        grid-area: pri;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        justify-self: center;
+        align-self:center;
+        object-fit: cover;
+    }
+    
+    .popularreviewrating{
+        grid-area: prr;
+    }
+    
+    .popularreviewtext{
+        grid-area: prtxt;
+        align-self: center;
+    }
+    
+    .popularreviewlikes{
+        grid-area: prl;
+    }
+
+    #homefooter{
+        grid-area: homef;
+        background-color: rgb(25, 27, 30);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    #homefooter .footer-content p {
+        margin: 5px 0;
+    }
+    
+    #homefooter a {
+        color: rgb(25, 27, 30);
+        text-decoration: none;
+    }
+    
+    #homefooter a:hover {
+        text-decoration: underline;
+    }
+}
+
+/*CSS endast för Desktop*/
+
+@media screen and (min-width: 501px) {
+    body{
+        background-color:rgb(25, 27, 30);
+    }
+
+    .notondesktop{
+        display: none;
     }
     
     #wrapper{
         display: grid;
-        grid-template-rows: 10vh 100vh 200px 350px 600px auto 100px;
+        grid-template-rows: 15vh 100vh 200px 350px 600px auto 100px;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -76,9 +254,35 @@ p{
         grid-area: homeh;
         background-color:rgb(25, 27, 30);
         display: grid;
-        grid-template-columns: 50px auto;
+        grid-template-columns: 18vw 50vw;
         padding: 10px;
-        align-items: start;
+        justify-content: center;
+        align-content: center;
+
+    }
+
+    .homeheadertitle{
+        font-size: 4rem;
+        font-family: "Inter", sans-serif;
+    }
+
+    .desktopmenu{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        align-self: center;
+        font-family: "Inter", serif;
+    }
+
+    .menulink div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .menuimg{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
     }
     
     #homebigimage{
@@ -93,6 +297,10 @@ p{
         display: grid;
         justify-content: center;
         text-align: center;
+    }
+
+    #slogan{
+        font-size: 1.5rem;
     }
     
     #homestaffpicks{
@@ -128,8 +336,7 @@ p{
     }
     
     .solidlinebig{
-        border-top: 1.5px solid gray;
-        border-bottom: 1.5px solid gray;
+        border-top: 0.75px solid rgb(127, 130, 146);
         height: 0px;
         justify-content: left;
         width: 75vw;
@@ -139,6 +346,7 @@ p{
     .sectiontitle{
         width: 100vw;
         text-align: center;
+        font-size: 2.5rem;
     
     }
     
@@ -163,6 +371,7 @@ p{
     #popprotitle{
         grid-area: poppt;
         text-align: center;
+
     }
     
     #homereviewwrapper{
@@ -173,8 +382,7 @@ p{
     }
     
     .solidline{
-        border-top: 1.5px solid gray;
-        border-bottom: 1.5px solid gray;
+        border-top: 0.1px solid rgb(127, 130, 146);
         height: 0px;
         justify-content: left;
         width: 54vw;
@@ -256,8 +464,7 @@ p{
     }
     
     .solidlinesmall{
-        border-top: 1.5px solid gray;
-        border-bottom: 1.5px solid gray;
+        border-top: 0.1px solid rgb(127, 130, 146);
         height: 0px;
         justify-content: left;
         width: 20vw;
@@ -297,5 +504,24 @@ p{
     
     #homefooter{
         grid-area: homef;
+        background-color: rgb(25, 27, 30);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
     }
+    
+    #homefooter .footer-content p {
+        margin: 5px 0;
+    }
+    
+    #homefooter a {
+        color: rgb(25, 27, 30);
+        text-decoration: none;
+    }
+    
+    #homefooter a:hover {
+        text-decoration: underline;
+    }
+
 }
