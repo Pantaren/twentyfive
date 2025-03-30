@@ -39,10 +39,10 @@ p{
         font-size: 2.5rem;
     }
 
-    .solidlinebig{
+    .solidlinephone{
         border-top: 0.5px solid rgb(127, 130, 146);
         height: 0;
-        width: 80vw;
+        width: 90vw;
     }
     
     .menu-button i.material-icons{
@@ -53,29 +53,65 @@ p{
         cursor: pointer;
         display: inline;
         color: white;
-        z-index: 20;
+        z-index: 2;
     }
 
     .menu{
         height: 100vh;
         width: 75vw;
-        background: hotpink;
+        background: rgb(25, 27, 30);
         position: fixed;
         top: 0;
         left: -90vw;
         transition: left 0.3s;
         box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
         z-index: 10;
-    
+        padding: 10px;
     }
     
     .show{
         left: 0;
     }
 
+    .solidlinemenu{
+        border-top: 0.5px solid rgb(127, 130, 146);
+        height: 0;
+        width: 70vw;
+    }
+
+    .menulink div{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menulink:hover{
+        color: greenyellow;
+    }
+
+    .menuicon{
+        color: white;
+        align-self: center;
+    }
+
+    .fade-layer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 5;
+    }
+    
+    .fade-layer.visible{
+        display: block;
+    }
+
     #wrapper{
         display: grid;
-        grid-template-rows: 15vh 40vh 200px 350px 600px auto 100px;
+        grid-template-rows: 15vh 40vh 40vh 50vh 70vh auto 30vh;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -125,6 +161,7 @@ p{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 5px;
     }
 
     .songimgstaff{
@@ -146,6 +183,14 @@ p{
         width: 20vw;
     }
 
+    #homemain{
+        grid-area: homem;
+    }
+
+    #poprevtitle{
+        text-align: center;
+    }
+
     .popularreview{
         background-color:rgb(25, 27, 30);
         grid-area: poprev;
@@ -154,7 +199,7 @@ p{
         padding: 20px;
         gap: 5px;
         grid-template-columns: 20% 30px 80px 80px auto;
-        grid-template-rows: 20px 20px 20px 20px;
+        grid-template-rows: 20px 20px auto 20px;
         grid-template-areas: 
         'primg prt prt prt prt'
         'primg pri prn prr prr'
@@ -165,13 +210,14 @@ p{
     
     .popularreviewimg{
         grid-area: primg;
-        width: 95%;
-        height: 85%;
+        width: 17vw;
+        height: 17vh;
     
     }
     
     .popularreviewtitle{
         grid-area: prt;
+        align-self: center;
     }
     
     .popularreviewname{
@@ -191,6 +237,9 @@ p{
     
     .popularreviewrating{
         grid-area: prr;
+        height: 30px;
+        align-self: center;
+        color: greenyellow;
     }
     
     .popularreviewtext{
@@ -200,6 +249,7 @@ p{
     
     .popularreviewlikes{
         grid-area: prl;
+        color: white;
     }
 
     #homefooter{
@@ -209,6 +259,7 @@ p{
         padding: 20px;
         text-align: center;
         font-size: 14px;
+        align-self: center;
     }
     
     #homefooter .footer-content p {
@@ -216,7 +267,7 @@ p{
     }
     
     #homefooter a {
-        color: rgb(25, 27, 30);
+        color: rgb(127, 130, 146);
         text-decoration: none;
     }
     
@@ -228,6 +279,7 @@ p{
 /*CSS endast för Desktop*/
 
 @media screen and (min-width: 501px) {
+    /*CSS för hela desktop*/
     body{
         background-color:rgb(25, 27, 30);
     }
@@ -236,9 +288,10 @@ p{
         display: none;
     }
     
+    /*CSS endast för Home-desktop*/
     #wrapper{
         display: grid;
-        grid-template-rows: 15vh 100vh 200px 350px 600px auto 100px;
+        grid-template-rows: 15vh 100vh 40vh 60vh 90vh auto 15vh;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -268,21 +321,29 @@ p{
 
     .desktopmenu{
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: auto auto auto auto;
         align-self: center;
         font-family: "Inter", serif;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .solidverticalline{
+        border-left: 0.75px solid rgb(127, 130, 146);
+        height: 10vh;
+        width: 0;
     }
 
     .menulink div{
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: 10px;
+        color: white;
     }
 
-    .menuimg{
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
+    .menuicon{
+        align-self: center;
     }
     
     #homebigimage{
@@ -324,14 +385,14 @@ p{
     }
     
     .songimgstaff{
-        height: 200px;
-        width: 150px;
+        height: 16vw;
+        width: 12vw;
         object-fit: cover;
     }
     
     .songimgpop{
-        height: 175px;
-        width: 125px;
+        height: 13vw;
+        width: 9.5vw;
         object-fit: cover;
     }
     
@@ -371,7 +432,6 @@ p{
     #popprotitle{
         grid-area: poppt;
         text-align: center;
-
     }
     
     #homereviewwrapper{
@@ -397,7 +457,7 @@ p{
         padding: 20px;
         gap: 5px;
         grid-template-columns: 20% 30px 80px 80px auto;
-        grid-template-rows: 35px 35px 35px 35px;
+        grid-template-rows: 35px 35px auto 35px;
         grid-template-areas: 
         'primg prt prt prt prt'
         'primg pri prn prr prr'
@@ -408,13 +468,15 @@ p{
     
     .popularreviewimg{
         grid-area: primg;
-        width: 95%;
-        height: 75%;
+        width: 8vw;
+        height: 10vw;
     
     }
     
     .popularreviewtitle{
         grid-area: prt;
+        font-size: 1.6rem;
+        align-self: center;
     }
     
     .popularreviewname{
@@ -434,6 +496,9 @@ p{
     
     .popularreviewrating{
         grid-area: prr;
+        height: 30px;
+        align-self: center;
+        color: greenyellow;
     }
     
     .popularreviewtext{
@@ -443,6 +508,7 @@ p{
     
     .popularreviewlikes{
         grid-area: prl;
+        color: white;
     }
     
     #homeaside{
