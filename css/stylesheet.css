@@ -20,8 +20,15 @@ p{
     font-family: "Caprasimo", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
+
+.imgborderradius{
+    border-radius: 3%;
+}
+
+img:hover {
+    box-shadow: 0px 0px 5px 1px rgb(153, 170, 187);
+} 
 
 /*CSS för MOBIL*/
 @media screen and (max-width: 500px) {
@@ -31,15 +38,16 @@ p{
     }
 
     .notonphone{
-        display: none;
+        display: none !important;
     }
 
     /*CSS för home MOBIL*/
 
     .sectiontitle{
-        width: 100vw;
+        width: 90vw;
         text-align: center;
         font-size: 2.5rem;
+        margin: 5px;
     }
 
     .solidlinephone{
@@ -114,7 +122,7 @@ p{
 
     #wrapper{
         display: grid;
-        grid-template-rows: 15vh 40vh 40vh 50vh 70vh auto 30vh;
+        grid-template-rows: 20vw 40vh auto auto auto auto 30vh;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -125,6 +133,7 @@ p{
         'homef'
         ;
         justify-content: center;
+        justify-items: center;
     }
 
     #homeheader{
@@ -135,10 +144,12 @@ p{
         padding: 20px;
         align-content: center;
         font-family: "Inter", sans-serif;
+        width: 90vw;
     }
 
     .homeheadertitle{
         font-size: 3rem;
+        margin: 0;
     }
 
     .menu-button{
@@ -153,6 +164,9 @@ p{
 
     #homeintro{
         grid-area: homei;
+        justify-content: center;
+        justify-self: center;
+        width: 90vw;
     }
 
     #slogan{
@@ -168,7 +182,7 @@ p{
     }
 
     .songimgstaff{
-        height: 20vh;
+        height: 30vw;
         width: 20vw;
     }
 
@@ -177,13 +191,15 @@ p{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        justify-self: center;
         align-content: center;
         gap: 5px;
+        width: 90vw;
     }
 
     .songimgpop{
-        height: 20vh;
         width: 20vw;
+        height: 30vw;
     }
 
     #homemain{
@@ -277,14 +293,14 @@ p{
     
     #homefooter a:hover {
         text-decoration: underline;
-    }¨
+    }
 
     /*CSS för account MOBIL*/
-    
     #accwrapper{
         display: grid;
-        grid-template-rows: 15vh 100vh auto auto 25vh;
+        grid-template-rows: 15vh auto auto auto 25vh;
         justify-content: center;
+        justify-items: center;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -294,33 +310,50 @@ p{
         ;
     }
 
+    #accbigimage{
+        width: 100%;
+        max-height: 33vh;
+        object-fit: cover;
+    }
+
     .accintro{
         grid-area: acci;
         display: grid;
         justify-content: center;
-        grid-template-columns: 40vw 60vw;
-        grid-template-rows: 30vh 30vw;
+        grid-template-columns: 40vw 40vw;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        'accintroimg accname'
+        'accstats accstats'
+        ;
         align-items: center;
-
+        padding: 10px;
+        width: 80%;
     }
 
     .accname{
         font-size: 2.5rem;
+        grid-area: accname;
     }
 
     .accintroimg{
         object-fit: cover;
-        border-radius: 30vw;
-        width: 30vw;
+        border-radius: 25vw;
+        width: 25vw;
+        height: 25vw;
+        grid-area: accintroimg;
+        justify-self: center;
     }
 
     .accstats{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         gap: 10px;
-        height: 5vh;
+        height: 20vh;
         align-items: center;
         text-align: center;
+        grid-area: accstats;
     }
 
     .smallverticalline{
@@ -332,9 +365,11 @@ p{
 
     .accmain{
         grid-area: accm;
-        justify-self: center;
-        width: 50vw;
-
+        display: flex;
+        flex-wrap: wrap;
+        width: 90vw;
+        justify-items: center;
+        justify-content: center;
     }
 
     .accsection{
@@ -343,11 +378,11 @@ p{
         flex-wrap: wrap;
         justify-content: center;
         gap: 5px;
-        width: 50vw;
+        width: 90vw;
     }
 
     .smallsectiontitle{
-        width: 50vw;
+        width: 90vw;
         height: 10px;
         text-align: center;
         font-size: 1.5rem;
@@ -357,14 +392,14 @@ p{
         justify-self: left;
         border-top: 0.1px solid rgb(153, 170, 187);
         height: 0px;
-        width: 41vw;
+        width: 90vw;
     }
 
     .accsolidlinerev{
         justify-self: left;
         border-top: 0.1px solid rgb(153, 170, 187);
         height: 0px;
-        width: 50vw;
+        width: 90vw;
         grid-area: accsl;
     }
 
@@ -372,12 +407,11 @@ p{
         background-color:rgb(25, 27, 30);
         grid-area: poprev;
         display: grid;
-        width: 50vw;
-        padding: 20px;
+        width: 90vw;
         gap: 5px;
         justify-content: left;
         grid-template-columns: 20% 30px 80px 80px auto;
-        grid-template-rows: 20px 25px 20px auto 20px;
+        grid-template-rows: 20px 25px 20px auto 40px;
         grid-template-areas: 
         'accsl accsl accsl accsl accsl'
         'primg prt prt prt prt'
@@ -385,6 +419,262 @@ p{
         'primg prtxt prtxt prtxt prtxt'
         'primg prl prl prl prl'
         ;
+    }
+
+    .accaside{
+        grid-area: acca;
+        display: flex;
+        align-self: baseline;
+        justify-self: left;
+        flex-direction: column;
+        justify-content: center;
+        width: 25vw;
+    }
+
+    .asidebox{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-rows: 30px 12vw;
+    }
+
+    .accasideimg{
+        width: 12vw;
+        height: 10vw;
+    }
+
+    .accasideline{
+        border-top: 0.1px solid rgb(153, 170, 187);
+        height: 0px;
+        width: 15vw;
+    }
+
+    /*CSS för Members MOBIL*/
+    #memberwrapper{
+        display: grid;
+        grid-template-rows: 15vh 25vh auto auto 25vh;
+        justify-content: center;
+        gap: 10px;
+        grid-template-areas: 
+        'homeh'
+        'memberslogan'
+        'membermain'
+        'memberlist'
+        'homef'
+        ;
+    }
+
+    #memberslogan{
+        grid-area: memberslogan;
+        font-size: 2rem;
+        align-self: center;
+        text-align: center;
+    }
+
+    #membermain{
+        grid-area: membermain;
+        justify-content: center;
+    }
+
+    .membermainsection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .membertitle{
+        font-size: 1.65rem;
+        height: 2vh;
+    }
+
+    .membersolidline{
+        border-top: 0.5px solid rgb(153, 170, 187);
+        height: 0;
+        width: 90vw;
+        ;
+    }
+
+    .bigmember{
+        display: grid;
+        width: 40vw;
+        grid-template-rows: auto 30px 30px auto;
+        padding: 10px;
+        gap: 5px;
+        justify-items: center;
+    }
+
+    .bigmemberprofile{
+        object-fit: cover;
+        border-radius: 150px;
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .bigmembername{
+        align-self: center;
+    }
+
+    .bigmemberstats{
+        align-self: center;
+    }
+
+    .bigmemberimgwrap{
+        display: flex;
+        gap: 5px;
+    }
+
+    .bigmemberimg{
+        object-fit: cover;
+        height: 12vw;
+        width: 8vw;
+        border-radius: 1.5px;
+    }
+
+    #memberlist{
+        grid-area: memberlist;
+        justify-items: center;
+        justify-content: center;
+        justify-self: center;
+    }
+
+    .smallmember{
+        display: flex;
+        justify-content: space-between;
+        width: 85vw;
+    }
+
+    .smallmemberinfo{
+        display: grid;
+        align-content: center;
+        justify-self: left;
+        gap: 5px;
+        grid-template-columns: auto auto;
+        grid-template-rows: 30px 30px;
+        grid-template-areas: 
+        'smp smn'
+        'smp smr'
+        ;
+    }
+
+    .smallmemberprofile{
+        grid-area: smp;
+        object-fit: cover;
+        border-radius: 100px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .smallmembername{
+        grid-area: smn;
+        align-self: end;
+        margin: 0;
+    }
+
+    .smallmemberreviews{
+        grid-area: smr;
+        margin: 0;
+    }
+
+    .smallmemberstats{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /*CSS för Songs-MOBIL*/
+
+    #songswrapper{
+        display: grid;
+        grid-template-rows: 15vh auto auto auto 25vh;
+        grid-template-areas: 
+        'homeh'
+        'popularsongs'
+        'justreviewed'
+        'newrelease'
+        'homef'
+        ;
+    }
+
+    #popularsongs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-self: center;
+        gap: 10px;
+        grid-area: popularsongs;
+        width: 80vw;
+    }
+
+    .songssolidline{
+        border-top: 0.1px solid rgb(153, 170, 187);
+        height: 0px;
+        width: 80vw;
+    }
+
+    .megasongwrap{
+        display: grid;
+        flex-wrap: wrap;
+    }
+
+    .megasong{
+        object-fit: cover;
+        width: 80vw;
+        height: 120vw;
+    }  
+    
+    .megasongstats{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .justreviewedwrap{
+        grid-area: justreviewed;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        width: 70vw;
+        justify-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .justreviewedtitle{
+        font-size: 1.65rem;
+        height: 2vh;
+        width: 70vw;
+    }
+
+    .songsbigline{
+        border-top: 0.1px solid rgb(153, 170, 187);
+        height: 0px;
+        width: 80vw;
+    }
+
+    .minisongimg{
+        object-fit: cover;
+        width: 16vw;
+        height: 24vw;
+    }
+
+    .newreleasewrap{
+        grid-area: newrelease;
+        justify-content: center;
+        justify-self: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;
+        gap: 10px;
+        padding-bottom: 50px;
+    }
+
+    .supermegasong{
+        object-fit: cover;
+        width: 80vw;
+        height: 120vw;
     }
 
 }
@@ -404,7 +694,7 @@ p{
     /*CSS för Home-desktop*/
     #wrapper{
         display: grid;
-        grid-template-rows: 15vh 100vh 40vh 60vh 90vh auto 25vh;
+        grid-template-rows: 15vh auto auto auto auto auto 25vh;
         grid-template-areas: 
         'homeh'
         'homebi'
@@ -414,6 +704,8 @@ p{
         'homem'
         'homef'
         ;
+        justify-content: center;
+        justify-items: center;
     }
     
     #homeheader{
@@ -421,6 +713,7 @@ p{
         background-color:rgb(25, 27, 30);
         display: grid;
         grid-template-columns: 18vw 50vw;
+        width: 95vw;
         padding: 10px;
         justify-content: center;
         align-content: center;
@@ -470,7 +763,7 @@ p{
     #homebigimage{
         grid-area: homebi;
         object-fit: cover;
-        width: 100vw;
+        width: 100%;
         height: 95vh;
     }
     
@@ -513,7 +806,7 @@ p{
     
     .songimgpop{
         height: 13vw;
-        width: 9.5vw;
+        width: 9vw;
         object-fit: cover;
     }
     
@@ -526,7 +819,7 @@ p{
     }
     
     .sectiontitle{
-        width: 100vw;
+        width: 90vw;
         text-align: center;
         font-size: 2.5rem;
     
@@ -660,6 +953,7 @@ p{
     
     .poppropic{
         grid-area: poppropic;
+        object-fit: cover;
         height: 75px;
         width: 75px;
         border-radius: 75px;
@@ -698,6 +992,8 @@ p{
         text-align: center;
         font-size: 14px;
         align-content: center;
+        justify-self: center;
+        width: 80vw;
     }
     
     #homefooter .footer-content p {
@@ -718,15 +1014,23 @@ p{
     #accwrapper{
         display: grid;
         grid-template-rows: 15vh 100vh auto auto 25vh;
-        grid-template-columns: 65vw 35vw;
+        grid-template-columns: 65% 35%;
         justify-content: center;
+        justify-items:center ;
         grid-template-areas: 
         'homeh homeh'
-        'homebi homebi'
+        'accbi accbi'
         'acci acci'
         'accm acca'
         'homef homef'
         ;
+    }
+    
+    #accbigimage{
+        grid-area: accbi;
+        object-fit: cover;
+        width: 100%;
+        height: 95vh;
     }
 
     .accintro{
@@ -735,7 +1039,7 @@ p{
         justify-content: center;
         grid-template-columns: 15vw 35vw auto;
         align-items: center;
-
+        width: 95vw;
     }
 
     .accname{
@@ -746,6 +1050,7 @@ p{
         object-fit: cover;
         border-radius: 125px;
         width: 125px;
+        height: 125px;
     }
 
     .accstats{
@@ -848,5 +1153,230 @@ p{
         height: 0px;
         width: 15vw;
     }
+
+
+    /*CSS endast för Members-desktop*/
+
+    #memberwrapper{
+        display: grid;
+        grid-template-rows: 15vh 25vh auto auto 25vh;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas: 
+        'homeh'
+        'memberslogan'
+        'membermain'
+        'memberlist'
+        'homef'
+        ;
+    }
+
+    #memberslogan{
+        grid-area: memberslogan;
+        font-size: 2rem;
+        align-self: center;
+    }
+
+    #membermain{
+        grid-area: membermain;
+        justify-content: center;
+    }
+
+    .membermainsection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .membertitle{
+        font-size: 1.65rem;
+        height: 2vh;
+    }
+
+    .membersolidline{
+        border-top: 0.5px solid rgb(153, 170, 187);
+        height: 0;
+        width: 85vw;
+        ;
+    }
+
+    .bigmember{
+        display: grid;
+        width: 15vw;
+        grid-template-rows: auto 30px 30px auto;
+        padding: 10px;
+        gap: 5px;
+        justify-items: center;
+    }
+
+    .bigmemberprofile{
+        object-fit: cover;
+        border-radius: 150px;
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .bigmembername{
+        align-self: center;
+    }
+
+    .bigmemberstats{
+        align-self: center;
+    }
+
+    .bigmemberimgwrap{
+        display: flex;
+        gap: 5px;
+    }
+
+    .bigmemberimg{
+        object-fit: cover;
+        height: 4vw;
+        width: 3vw;
+        border-radius: 1.5px;
+    }
+
+    #memberlist{
+        grid-area: memberlist;
+    }
+
+    .smallmember{
+        display: flex;
+        justify-content: space-between;
+        width: 85vw;
+    }
+
+    .smallmemberinfo{
+        display: grid;
+        align-content: center;
+        justify-self: left;
+        gap: 5px;
+        grid-template-columns: auto auto;
+        grid-template-rows: 30px 30px;
+        grid-template-areas: 
+        'smp smn'
+        'smp smr'
+        ;
+    }
+
+    .smallmemberprofile{
+        grid-area: smp;
+        object-fit: cover;
+        border-radius: 100px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .smallmembername{
+        grid-area: smn;
+        align-self: end;
+        margin: 0;
+    }
+
+    .smallmemberreviews{
+        grid-area: smr;
+        margin: 0;
+    }
+
+    .smallmemberstats{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /*CSS endast för Songs-desktop*/
+
+    #songswrapper{
+        display: grid;
+        grid-template-rows: 15vh auto auto auto 25vh;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas: 
+        'homeh'
+        'popularsongs'
+        'justreviewed'
+        'newrelease'
+        'homef'
+        ;
+    }
+
+    #popularsongs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        grid-area: popularsongs;
+        width: 80vw;
+    }
+
+    .songssolidline{
+        border-top: 0.1px solid rgb(153, 170, 187);
+        height: 0px;
+        width: 66vw;
+    }
+
+    .megasongwrap{
+        display: grid;
+        flex-wrap: wrap;
+    }
+
+    .megasong{
+        object-fit: cover;
+        width: 16vw;
+        height: 24vw;
+    }  
+    
+    .megasongstats{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .justreviewedwrap{
+        grid-area: justreviewed;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        width: 80vw;
+        justify-content: center;
+    }
+
+    .justreviewedtitle{
+        font-size: 1.65rem;
+        height: 2vh;
+        width: 70vw;
+    }
+
+    .songsbigline{
+        border-top: 0.1px solid rgb(153, 170, 187);
+        height: 0px;
+        width: 76vw;
+    }
+
+    .minisongimg{
+        object-fit: cover;
+        width: 6vw;
+        height: 9vw;
+    }
+
+    .newreleasewrap{
+        grid-area: newrelease;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .supermegasong{
+        object-fit: cover;
+        width: 24vw;
+        height: 36vw;
+    }
+
+
 }
 
